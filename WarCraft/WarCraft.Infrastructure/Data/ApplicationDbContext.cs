@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace WarCraft.Data
+namespace WarCraft.Infrastructure.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

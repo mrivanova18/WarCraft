@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using WarCraft.Data;
+using WarCraft.Infrastructure.Data;
 
 namespace WarCraft
 {
