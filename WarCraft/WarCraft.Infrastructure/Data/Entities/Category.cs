@@ -9,8 +9,7 @@ namespace WarCraft.Infrastructure.Data.Entities
     public class Category
     {
         public int Id { get; set; }
-        public string Planes { get; set; } = null!;
-        public string Tanks { get; set; } = null!;
-        public string Ship { get; set; } = null!;
+        public string CategoryName { get; set; } = null!;
+        public virtual IEnumerable<Product> Products { get; set; } = new List<Product>();
     }
 }

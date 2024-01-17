@@ -43,6 +43,6 @@ namespace WarCraft.Infrastructure.Data.Entities
 
         public int Discount { get; set; }
 
-        public IEnumerable<Order> Orders { get; set; } = new List<Order>();
+        public virtual IEnumerable<Order> Orders { get; set; } = new List<Order>();
     }
 }
