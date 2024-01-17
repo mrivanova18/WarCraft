@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using WarCraft.Infrastructure.Data.Entities;
 
 namespace WarCraft.Infrastructure.Data
 {
@@ -9,5 +10,9 @@ namespace WarCraft.Infrastructure.Data
             : base(options)
         {
         }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Manufacturer> Manufacturers { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }
