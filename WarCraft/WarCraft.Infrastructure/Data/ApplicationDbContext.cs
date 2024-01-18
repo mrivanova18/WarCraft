@@ -10,9 +10,9 @@ namespace WarCraft.Infrastructure.Data
             : base(options)
         {
         }
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Manufacturer> Manufacturers { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<Product> Products { get; set; }
+      //  public DbSet<Category> Categories { get; set; }
+      //  public DbSet<Manufacturer> Manufacturers { get; set; }
+      //  public DbSet<Order> Orders { get; set; }
+      //  public DbSet<Product> Products { get; set; }
     }
 }
