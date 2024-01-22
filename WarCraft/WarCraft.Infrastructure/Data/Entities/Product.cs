@@ -25,6 +25,7 @@ namespace WarCraft.Infrastructure.Data.Entities
         public string Name { get; set; } = null!;
 
         [Required]
+        [Range(10,1000)]
         public decimal Price { get; set; }
 
         [Required]
