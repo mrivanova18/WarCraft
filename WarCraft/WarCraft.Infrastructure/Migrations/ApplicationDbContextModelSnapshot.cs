@@ -485,7 +485,7 @@ namespace WarCraft.Infrastructure.Migrations
                         .HasForeignKey("ApplicationUserId");
 
                     b.HasOne("WarCraft.Infrastructure.Data.Entities.Category", "Category")
-                        .WithMany()
+                        .WithMany("PersonalOrders")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -516,6 +516,8 @@ namespace WarCraft.Infrastructure.Migrations
 
             modelBuilder.Entity("WarCraft.Infrastructure.Data.Entities.Category", b =>
                 {
+                    b.Navigation("PersonalOrders");
+
                     b.Navigation("Products");
                 });
 

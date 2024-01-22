@@ -12,7 +12,7 @@ using WarCraft.Infrastructure.Data;
 namespace WarCraft.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240122083554_InitialMigrate")]
+    [Migration("20240122090940_InitialMigrate")]
     partial class InitialMigrate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -487,7 +487,7 @@ namespace WarCraft.Infrastructure.Migrations
                         .HasForeignKey("ApplicationUserId");
 
                     b.HasOne("WarCraft.Infrastructure.Data.Entities.Category", "Category")
-                        .WithMany()
+                        .WithMany("PersonalOrders")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -518,6 +518,8 @@ namespace WarCraft.Infrastructure.Migrations
 
             modelBuilder.Entity("WarCraft.Infrastructure.Data.Entities.Category", b =>
                 {
+                    b.Navigation("PersonalOrders");
+
                     b.Navigation("Products");
                 });
 
