@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using WarCraft.Infrastructure.Data;
 using WarCraft.Infrastructure.Data.Entities;
+using WarCraft.Infrastructure.Data.Infrastructure;
 
 namespace WarCraft
 {
@@ -26,10 +27,13 @@ namespace WarCraft
                 options.Password.RequireDigit = false;
                 options.Password.RequiredLength = 5;
             })
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
+
+            app.PrepareDatabase();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
