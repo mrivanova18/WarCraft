@@ -12,8 +12,8 @@ using WarCraft.Infrastructure.Data;
 namespace WarCraft.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240123070424_InitialMigrate")]
-    partial class InitialMigrate
+    [Migration("20240123114551_AddedTables")]
+    partial class AddedTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace WarCraft.Infrastructure.Data.Entities
         public int Id { get; set; }
 
         [Required]
+        [ForeignKey("Category")]
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; } = null!;
 
@@ -33,6 +35,7 @@ namespace WarCraft.Infrastructure.Data.Entities
         public int QuantityAvailable { get; set; }
 
         [Required]
+        [ForeignKey("Manufacturer")]
         public int ManufacturerId { get; set; }
         public virtual Manufacturer Manufacturer { get; set; } = null!;
 

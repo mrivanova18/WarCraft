@@ -19,6 +19,7 @@ namespace WarCraft.Infrastructure.Data.Entities
         public virtual ApplicationUser User { get; set; } = null!;
 
         [Required]
+        [ForeignKey("Category")]
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; } = null!;
 
