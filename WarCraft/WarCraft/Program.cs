@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using WarCraft.Core.Contracts;
+using WarCraft.Core.Services;
 using WarCraft.Infrastructure.Data;
 using WarCraft.Infrastructure.Data.Entities;
 using WarCraft.Infrastructure.Data.Infrastructure;
@@ -15,7 +17,8 @@ namespace WarCraft
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(connectionString));
+               options.UseLazyLoadingProxies()
+               .UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
@@ -31,8 +34,9 @@ namespace WarCraft
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddControllersWithViews();
 
-            var app = builder.Build();
+            builder.Services.AddTransient<ICategoryService, CategoryService>();
 
+            var app = builder.Build();
             app.PrepareDatabase();
 
             // Configure the HTTP request pipeline.

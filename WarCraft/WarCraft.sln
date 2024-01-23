@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarCraft", "WarCraft\WarCraft.csproj", "{975D4361-CACC-432E-A355-AB4067DD99A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WarCraft", "WarCraft\WarCraft.csproj", "{975D4361-CACC-432E-A355-AB4067DD99A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarCraft.Infrastructure", "WarCraft.Infrastructure\WarCraft.Infrastructure.csproj", "{B297885C-B05E-45FE-AA94-3D78439CEEFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WarCraft.Infrastructure", "WarCraft.Infrastructure\WarCraft.Infrastructure.csproj", "{B297885C-B05E-45FE-AA94-3D78439CEEFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarCraft.Core", "WarCraft.Core\WarCraft.Core.csproj", "{46D55549-D15C-484E-B270-8AF4144A446E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B297885C-B05E-45FE-AA94-3D78439CEEFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B297885C-B05E-45FE-AA94-3D78439CEEFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B297885C-B05E-45FE-AA94-3D78439CEEFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46D55549-D15C-484E-B270-8AF4144A446E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46D55549-D15C-484E-B270-8AF4144A446E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46D55549-D15C-484E-B270-8AF4144A446E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46D55549-D15C-484E-B270-8AF4144A446E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
