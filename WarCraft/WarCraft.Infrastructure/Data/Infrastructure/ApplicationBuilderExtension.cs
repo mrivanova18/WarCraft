@@ -20,6 +20,9 @@ namespace WarCraft.Infrastructure.Data.Infrastructure
             await RoleSeeder(services);
             await SeedAdministrator(services);
 
+            var dataCategory = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+            SeedCategories(dataCategory);
+
             return app;
         }
         public static async Task RoleSeeder(IServiceProvider serviceProvider)
@@ -56,6 +59,20 @@ namespace WarCraft.Infrastructure.Data.Infrastructure
                     userManager.AddToRoleAsync(user, "Administrator").Wait();
                 }
             }
+        }
+        private static void SeedCategories(ApplicationDbContext dataCategory)
+        {
+            if (dataCategory.Categories.Any())
+            {
+                return;
+            }
+            dataCategory.Categories.AddRange(new[]
+            {
+                new Category {CategoryName="Plane"},
+                new Category {CategoryName="Tank"},
+                new Category {CategoryName="Ship"},                
+            });
+            dataCategory.SaveChanges();
         }
     }
 }
