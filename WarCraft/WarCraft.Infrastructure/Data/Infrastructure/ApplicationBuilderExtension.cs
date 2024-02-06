@@ -68,9 +68,9 @@ namespace WarCraft.Infrastructure.Data.Infrastructure
             }
             dataCategory.Categories.AddRange(new[]
             {
-                new Category {CategoryName="Plane"},
-                new Category {CategoryName="Tank"},
-                new Category {CategoryName="Ship"},                
+                new Category {CategoryName="Plane", Type="Bomber"+"Fighter"+"Attack"+"Cargo"+"Maritime patrol"+"Multirole"},
+                new Category {CategoryName="Tank", Type="Cruiser"+"Main battle tank"+"Tank Destroyer"+"Light"+"Medium"+"Heavy"},
+                new Category {CategoryName="Ship", Type="Amphibious warfare ships"+"Brig"+"Cruiser"+"Aviation cruiser"+"Destroyer"},                
             });
             dataCategory.SaveChanges();
         }

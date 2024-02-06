@@ -251,6 +251,10 @@ namespace WarCraft.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
@@ -389,11 +393,6 @@ namespace WarCraft.Infrastructure.Migrations
 
                     b.Property<int>("QuantityAvailable")
                         .HasColumnType("int");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
 
                     b.HasKey("Id");
 

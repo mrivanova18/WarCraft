@@ -19,10 +19,6 @@ namespace WarCraft.Infrastructure.Data.Entities
         public virtual Category Category { get; set; } = null!;
 
         [Required]
-        [MaxLength(40)]
-        public string Type { get; set; } = null!;
-
-        [Required]
         [MaxLength(30)]
         public string Name { get; set; } = null!;
 
