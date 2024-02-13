@@ -10,7 +10,7 @@ namespace WarCraft.Infrastructure.Data.Entities
     {
         public int Id { get; set; }
         public string ManufacturerName { get; set; } = null!;
-        public string CountryOfOrigin { get; set; } = null!;
+       // public string CountryOfOrigin { get; set; } = null!;
         public virtual IEnumerable<Product> Products { get; set; } = new List<Product>();
     }
 }

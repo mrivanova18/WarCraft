@@ -22,6 +22,8 @@ namespace WarCraft.Infrastructure.Data.Infrastructure
 
             var dataCategory = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
             SeedCategories(dataCategory);
+            var dataManufacturer = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+            SeedManufacturer(dataManufacturer);
 
             return app;
         }
@@ -68,11 +70,35 @@ namespace WarCraft.Infrastructure.Data.Infrastructure
             }
             dataCategory.Categories.AddRange(new[]
             {
-                new Category {CategoryName="Plane", Type="Bomber"+"Fighter"+"Attack"+"Cargo"+"Maritime patrol"+"Multirole"},
-                new Category {CategoryName="Tank", Type="Cruiser"+"Main battle tank"+"Tank Destroyer"+"Light"+"Medium"+"Heavy"},
-                new Category {CategoryName="Ship", Type="Amphibious warfare ships"+"Brig"+"Cruiser"+"Aviation cruiser"+"Destroyer"},                
-            });
+                new Category {CategoryName = "Plane - Bomber" },
+                new Category {CategoryName = "Plane - Fighter" },
+                new Category {CategoryName = "Plane - Attack" },
+                //+""+""+"Cargo"+"Maritime patrol"+"Multirole"},
+                new Category {CategoryName = "Tank" },
+                    //Type = "Cruiser"+"Main battle tank"+"Tank Destroyer"+"Light"+"Medium"+"Heavy"},
+                new Category {CategoryName = "Ship" }
+                    //Type = "Amphibious warfare ships"+"Brig"+"Cruiser"+"Aviation cruiser"+"Destroyer"},
+            }); ;
             dataCategory.SaveChanges();
+        }
+
+        private static void SeedManufacturer(ApplicationDbContext dataManufacturer)
+        {
+            if (dataManufacturer.Manufacturers.Any())
+            {
+                return;
+            }
+            dataManufacturer.Manufacturers.AddRange(new[]
+            {
+                new Manufacturer{ManufacturerName = "Lockheed Martin",  },
+                new Manufacturer{ManufacturerName = "McDonnell Douglas",  },
+                new Manufacturer{ManufacturerName = "Boeing",},
+                new Manufacturer{ManufacturerName = "Northrop Grumman", },
+                new Manufacturer{ManufacturerName = "Albatros", },
+                new Manufacturer{ManufacturerName = "Messerschmitt", },
+                new Manufacturer{ManufacturerName = "Supermarine",  },
+            });
+            dataManufacturer.SaveChanges();
         }
     }
 }
