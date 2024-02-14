@@ -73,11 +73,16 @@ namespace WarCraft.Infrastructure.Data.Infrastructure
                 new Category {CategoryName = "Plane - Bomber" },
                 new Category {CategoryName = "Plane - Fighter" },
                 new Category {CategoryName = "Plane - Attack" },
-                //+""+""+"Cargo"+"Maritime patrol"+"Multirole"},
-                new Category {CategoryName = "Tank" },
-                    //Type = "Cruiser"+"Main battle tank"+"Tank Destroyer"+"Light"+"Medium"+"Heavy"},
-                new Category {CategoryName = "Ship" }
-                    //Type = "Amphibious warfare ships"+"Brig"+"Cruiser"+"Aviation cruiser"+"Destroyer"},
+                new Category {CategoryName = "Plane - Cargo" },
+                new Category {CategoryName = "Plane - Multirole" },
+                new Category {CategoryName = "Tank – Cruiser" },
+                new Category {CategoryName = "Tank – Main battle tank" },
+                new Category {CategoryName = "Tank – Tank Destroyer" },
+                new Category {CategoryName = "Tank – Light/Medium/Heavy" },
+                new Category {CategoryName = "Ship – Amphibious warfare ships" },
+                new Category {CategoryName = "Ship – Brig" },
+                new Category {CategoryName = "Ship – Aviation cruiser" },
+                new Category {CategoryName = "Ship – Destroyer" }
             }); ;
             dataCategory.SaveChanges();
         }
@@ -90,13 +95,13 @@ namespace WarCraft.Infrastructure.Data.Infrastructure
             }
             dataManufacturer.Manufacturers.AddRange(new[]
             {
-                new Manufacturer{ManufacturerName = "Lockheed Martin",  },
-                new Manufacturer{ManufacturerName = "McDonnell Douglas",  },
-                new Manufacturer{ManufacturerName = "Boeing",},
-                new Manufacturer{ManufacturerName = "Northrop Grumman", },
-                new Manufacturer{ManufacturerName = "Albatros", },
-                new Manufacturer{ManufacturerName = "Messerschmitt", },
-                new Manufacturer{ManufacturerName = "Supermarine",  },
+                new Manufacturer{ManufacturerName = "Lockheed Martin – America",  },
+                new Manufacturer{ManufacturerName = "McDonnell Douglas – America",  },
+                new Manufacturer{ManufacturerName = "Boeing – America",},
+                new Manufacturer{ManufacturerName = "Northrop Grumman – America", },
+                new Manufacturer{ManufacturerName = "Albatros – Germany", },
+                new Manufacturer{ManufacturerName = "Messerschmitt – Germany", },
+                new Manufacturer{ManufacturerName = "Supermarine – United Kingdom",  },
             });
             dataManufacturer.SaveChanges();
         }
