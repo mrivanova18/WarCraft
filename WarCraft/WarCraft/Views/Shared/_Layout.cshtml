@@ -26,8 +26,40 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Products</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">All Products</a>
                         </li>
+                        <li class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                Categories
+                            </button>
+
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" asp-controller="Product" asp-action="Index" asp-route-searchStringCategoryName="Plane">Plane</a></li>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" asp-controller="Product" asp-action="Index" asp-route-searchStringCategoryName="Bomber">Bomber</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Product" asp-action="Index" asp-route-searchStringCategoryName="Fighter">Fighter</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Product" asp-action="Index" asp-route-searchStringCategoryName="Attack">Attack</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Product" asp-action="Index" asp-route-searchStringCategoryName="Cargo">Cargo</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Product" asp-action="Index" asp-route-searchStringCategoryName="Multirole">Multirole</a></li>
+                                </ul>
+                                <li><a class="dropdown-item" asp-controller="Product" asp-action="Index" asp-route-searchStringCategoryName="Tank">Tank</a></li>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" asp-controller="Product" asp-action="Index" asp-route-searchStringCategoryName="Cruiser">Cruiser</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Product" asp-action="Index" asp-route-searchStringCategoryName="Main battle tank">Main battle tank</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Product" asp-action="Index" asp-route-searchStringCategoryName="Tank Destroyer">Tank Destroyer</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Product" asp-action="Index" asp-route-searchStringCategoryName="Light/Medium/Heavy">Light/Medium/Heavy</a></li>
+                                </ul>
+                                <li><a class="dropdown-item" asp-controller="Product" asp-action="Index" asp-route-searchStringCategoryName="Ship">Ship</a></li>
+                                <ul class="submenu dropdown-menu">
+                                    <li><a class="dropdown-item" asp-controller="Product" asp-action="Index" asp-route-searchStringCategoryName="Amphibious warfare ships">Amphibious warfare ships</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Product" asp-action="Index" asp-route-searchStringCategoryName="Brig">Brig</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Product" asp-action="Index" asp-route-searchStringCategoryName="Aviation cruiser">Aviation cruiser</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Product" asp-action="Index" asp-route-searchStringCategoryName="Destroyer">Destroyer</a></li>
+                                </ul>
+                            </ul>
+                        </li>
+
                         @if (this.User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
@@ -47,6 +79,7 @@
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="/Client/Index">Clients</a></li>
                                     <li><a class="dropdown-item" href="/Order/Index">Orders</a></li>
+                                    <li><a class="dropdown-item" href="/Statistic/Index">Statistics</a></li>
                                 </ul>
                             </li>
                         }

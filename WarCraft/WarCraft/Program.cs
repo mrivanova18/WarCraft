@@ -38,6 +38,7 @@ namespace WarCraft
             builder.Services.AddTransient<IManufacturerService, ManufacturerService>();
             builder.Services.AddTransient<IProductService, ProductService>();
             builder.Services.AddTransient<IOrderService, OrderService>();
+            builder.Services.AddTransient<IStatisticsService, StatisticsService>();
 
             var app = builder.Build();
             app.PrepareDatabase();

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using WarCraft.Core.Contracts;
 using WarCraft.Infrastructure.Data.Entities;
 using WarCraft.Models.Client;
 
@@ -9,9 +10,11 @@ namespace WarCraft.Controllers
     public class ClientController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        public ClientController(UserManager<ApplicationUser> userManager)
+        private readonly IOrderService _orderService;
+        public ClientController(UserManager<ApplicationUser> userManager,IOrderService orderService)
         {
             _userManager = userManager;
+            _orderService = orderService;
         }
 
         // GET: ClientController
@@ -117,7 +120,11 @@ namespace WarCraft.Controllers
             {
                 return NotFound();
             }
-            IdentityResult result=await _userManager.DeleteAsync(user);
+            if (true)
+            {
+
+            }
+            IdentityResult result = await _userManager.DeleteAsync(user);
             if (result.Succeeded)
             {
                 return RedirectToAction("Success");
