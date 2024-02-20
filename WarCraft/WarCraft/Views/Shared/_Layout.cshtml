@@ -25,7 +25,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
+                        
                             <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">All Products</a>
                         </li>
                         <li class="dropdown">
@@ -79,10 +79,17 @@
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="/Client/Index">Clients</a></li>
                                     <li><a class="dropdown-item" href="/Order/Index">Orders</a></li>
-                                    <li><a class="dropdown-item" href="/Statistic/Index">Statistics</a></li>
+                                    <li><a class="dropdown-item" href="/Statistics/Index">Statistics</a></li>
                                 </ul>
                             </li>
                         }
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/Home/ContactUs">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/AboutUs/Index">About Us</a>
+                        </li>
+                        <li class="nav-item">
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
