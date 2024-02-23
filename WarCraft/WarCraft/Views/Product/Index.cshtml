@@ -3,24 +3,50 @@
 @{
     ViewData["Title"] = "Products";
 }
+<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel" style="width:auto">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-interval="2000000">
+            <img src="/images/slideshow2.jpeg" class="d-block w-100" alt="..." height="500">
+        </div>
+        <div class="carousel-item" data-interval="2000000">
+            <img src="/images/tank.jpg" class="d-block w-100" alt="..." height="500">
+        </div>
+        <div class="carousel-item" data-interval="2000000">
+            <img src="/images/slideshow3.jpeg" class="d-block w-100" alt="..." height="500">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
 
-<h1>Index</h1>
-
+<div class="text-center">
+    <h1>Products</h1>
+    <hr />
 @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
 {
     <p>
         <a asp-action="Create">Create New</a>
     </p>
 }
-
 <form asp-controller="Product" asp-action="Index" method="get">
     <p>
         Category: <input type="text" name="SearchStringCategoryName" />
         Manufacturer: <input type="text" name="SearchStringManufacturerName" />
-
         <input type="submit" value="Filter" />
     </p>
 </form>
+</div>
 
 <table class="table">
     <thead>
@@ -45,7 +71,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Price)
-            </th>            
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Discount)
             </th>
@@ -84,7 +110,7 @@
                 <td>
                     @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
                     {
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
                     }
 
                     <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-success">Details</a>

@@ -15,5 +15,6 @@ namespace WarCraft.Infrastructure.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<PersonalOrder> PersonalOrders { get; set; }
+        public DbSet<ContactUs> ContactUs { get; set; }
     }
 }

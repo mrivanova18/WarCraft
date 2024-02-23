@@ -1,0 +1,47 @@
+﻿@model WarCraft.Models.ContactUs.ContactUsVM
+
+@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<div class="text-center">
+    <h1>Contact Us</h1>
+    <hr />
+    <p>If you have any questions, messages or complaints:</p>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>                      
+            <div class="form-group">               
+                <input asp-for="FirstName" placeholder="First name..." />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input asp-for="LastName" placeholder="Last name..." />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input asp-for="Email" placeholder="Email..." />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>    
+            <br />
+            <div class="form-group">
+                <textarea rows="5" cols="70" asp-for="Message" placeholder="Write something..."></textarea>
+                <span asp-validation-for="Message" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

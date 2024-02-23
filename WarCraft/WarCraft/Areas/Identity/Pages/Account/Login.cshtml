@@ -2,16 +2,18 @@
 @model LoginModel
 
 @{
-    ViewData["Title"] = "Log in";
+    ViewData["Title"] = "Log In";
 }
 
 <h1 class="text-center">@ViewData["Title"]</h1>
-<div class="row">
+<br />
+<div class="row" id="login">
     <div class="col-md-4">
         <section>
             <form id="account" method="post">
-                <h2>Use a local account to log in.</h2>
-                <hr />
+                <div id="form">
+                    <h2 id="contactTitle">Use a local account to log in.</h2>
+                    <hr id="registerHr" />
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-floating">
                     <input asp-for="Input.UserName" class="form-control" autocomplete="username" aria-required="true" />
@@ -25,7 +27,8 @@
                 </div>               
                 <div>
                     <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
-                </div>               
+                </div>      
+                </div>
             </form>
         </section>
     </div>    
