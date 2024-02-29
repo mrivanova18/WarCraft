@@ -43,7 +43,7 @@ namespace WarCraft.Controllers
         {
             if (ModelState.IsValid)
             {
-                _contactUsService.Create(item.Id,item.FirstName,item.LastName,item.Email,item.Message);
+                _contactUsService.Create(item.FirstName,item.LastName,item.Email,item.Message);
                 return RedirectToAction("Success");                
             }
             return View(item);

@@ -9,7 +9,7 @@ namespace WarCraft.Core.Contracts
 {
     public interface IContactUsService
     {
-        bool Create(int id, string firstName, string lastName, string email, string message);
+        bool Create(string firstName, string lastName, string email, string message);
         List<ContactUs> GetMessage();
     }
 }

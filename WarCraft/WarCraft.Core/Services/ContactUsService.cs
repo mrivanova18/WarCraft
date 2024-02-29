@@ -16,11 +16,10 @@ namespace WarCraft.Core.Services
         {  
             _context = context; 
         }
-        public bool Create(int id, string firstName, string lastName, string email, string message)
+        public bool Create(string firstName, string lastName, string email, string message)
         {
             ContactUs contactUs = new ContactUs()
             {
-                Id = id,
                 FirstName = firstName,
                 LastName = lastName,
                 Email = email,

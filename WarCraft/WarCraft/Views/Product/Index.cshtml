@@ -14,7 +14,7 @@
             <img src="/images/slideshow2.jpeg" class="d-block w-100" alt="..." height="500">
         </div>
         <div class="carousel-item" data-interval="2000000">
-            <img src="/images/tank.jpg" class="d-block w-100" alt="..." height="500">
+            <img src="/images/slideshow1.jpeg" class="d-block w-100" alt="..." height="500">
         </div>
         <div class="carousel-item" data-interval="2000000">
             <img src="/images/slideshow3.jpeg" class="d-block w-100" alt="..." height="500">
@@ -41,9 +41,9 @@
 }
 <form asp-controller="Product" asp-action="Index" method="get">
     <p>
-        Category: <input type="text" name="SearchStringCategoryName" />
-        Manufacturer: <input type="text" name="SearchStringManufacturerName" />
-        <input type="submit" value="Filter" />
+        Category: <input id="filter" type="text" name="SearchStringCategoryName" />
+        Manufacturer: <input id="filter" type="text" name="SearchStringManufacturerName" />
+        <input id="submit" type="submit" value="Filter" />
     </p>
 </form>
 </div>

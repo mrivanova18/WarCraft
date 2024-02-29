@@ -28,10 +28,9 @@ namespace WarCraft.Infrastructure.Data.Entities
         public string NameOfProduct { get; set; } = null!;
 
         [Required]
-        [MaxLength(40)]
-        public string Type { get; set; } = null!;
+        public string Image { get; set; } = null!;
 
         [Required]
-        public string Image { get; set; } = null!;
+        public int Quantity { get; set; }
     }
 }

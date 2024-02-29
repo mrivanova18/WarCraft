@@ -44,6 +44,13 @@
                         @if (this.User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="PersonalOrder" asp-action="Create">Customized Order</a>
+                            </li>
+                        }
+
+                        @if (this.User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="MyOrders">My Orders</a>
                             </li>
                         }
@@ -60,8 +67,9 @@
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="/Client/Index">Clients</a></li>
                                     <li><a class="dropdown-item" href="/Order/Index">Orders</a></li>
+                                    <li><a class="dropdown-item" href="/PersonalOrder/Index">Customized Orders</a></li>
                                     <li><a class="dropdown-item" href="/Statistics/Index">Statistics</a></li>
-                                    <li><a class="dropdown-item" asp-area="" asp-controller="ContactUs" asp-action="Index">Messages</a></li>
+                                    <li><a class="dropdown-item" href="/ContactUs/Index">Messages</a></li>
                                 </ul>
                             </li>
                         }
