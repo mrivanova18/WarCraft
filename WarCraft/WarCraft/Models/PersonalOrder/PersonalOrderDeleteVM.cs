@@ -1,17 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using WarCraft.Infrastructure.Data.Entities;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace WarCraft.Models.PersonalOrder
 {
-    public class PersonalOrderIndexVM
+    public class PersonalOrderDeleteVM
     {
-        [Key]
         public int Id { get; set; }
 
         [Display(Name = "Order Date")]
 
-        public string OrderDate { get; set; } = null!;
+        public DateTime OrderDate { get; set; }
 
         public string UserId { get; set; } = null!;
         [Display(Name = "User")]
@@ -21,16 +18,13 @@ namespace WarCraft.Models.PersonalOrder
         [Display(Name = "Category")]
         public string CategoryName { get; set; } = null!;
 
-        [Required]
-        [MaxLength(40)]
         [Display(Name = "Name of product")]
         public string NameOfProduct { get; set; } = null!;
 
-        [Required]
+        [Display(Name = "Image")]
         public string Image { get; set; } = null!;
 
-        [Required]
+        [Display(Name = "Quantity")]
         public int Quantity { get; set; }
     }
 }
-

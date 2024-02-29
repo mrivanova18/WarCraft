@@ -8,6 +8,7 @@ using WarCraft.Core.Contracts;
 using WarCraft.Core.Services;
 using WarCraft.Infrastructure.Data.Entities;
 using WarCraft.Models.Category;
+using WarCraft.Models.Client;
 using WarCraft.Models.PersonalOrder;
 using WarCraft.Models.Product;
 
@@ -34,6 +35,7 @@ namespace WarCraft.Controllers
                     Id = x.Id,
                     OrderDate = x.OrderDate.ToString("dd-MMM-yyyy HH:mm", CultureInfo.InvariantCulture),
                     UserId = x.UserId,
+                    User = x.User.UserName,
                     CategoryId = x.CategoryId,
                     CategoryName = x.Category.CategoryName,
                     NameOfProduct = x.NameOfProduct,
@@ -111,7 +113,23 @@ namespace WarCraft.Controllers
         // GET: PersonalOrderController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            PersonalOrder item = _personalOrderService.GetOrderById(id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+            PersonalOrderDeleteVM order = new PersonalOrderDeleteVM()
+            {
+                Id = item.Id,
+                OrderDate = item.OrderDate,
+                UserId = item.UserId,
+                CategoryId = item.CategoryId,
+                CategoryName = item.Category.CategoryName,
+                NameOfProduct = item.NameOfProduct,
+                Image = item.Image,
+                Quantity = item.Quantity
+            };
+            return View(order);
         }
 
         // POST: PersonalOrderController/Delete/5
@@ -119,14 +137,20 @@ namespace WarCraft.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
         {
-            try
+            var deleted = _personalOrderService.RemoveById(id);
+            if (deleted)
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("SuccessDelete");
             }
-            catch
+            else
             {
                 return View();
             }
+        }
+
+        public IActionResult SuccessDelete()
+        {
+            return View();
         }
     }
 }

@@ -4,8 +4,9 @@
     ViewData["Title"] = "All Orders";
 }
 
+<div class="text-center">
 <h1>All Customized Orders</h1>
-
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -46,6 +47,12 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                    }
                 </td>
                 @*<td>
             <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

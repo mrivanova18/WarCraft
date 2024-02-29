@@ -31,6 +31,7 @@ namespace WarCraft.Controllers
                     Id = x.Id,
                     OrderDate = x.OrderDate.ToString("dd-MMM-yyyy HH:mm", CultureInfo.InvariantCulture),
                     UserId = x.UserId,
+                    User = x.User.UserName,
                     ProductId = x.ProductId,
                     Product = x.Product.Name,
                     Image = x.Product.Image,

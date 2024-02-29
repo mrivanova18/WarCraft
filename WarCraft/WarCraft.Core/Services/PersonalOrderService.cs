@@ -34,7 +34,7 @@ namespace WarCraft.Core.Services
 
         public PersonalOrder GetOrderById(int orderId)
         {
-            throw new NotImplementedException();
+            return _context.PersonalOrders.Find(orderId);
         }
 
         public List<PersonalOrder> GetOrders()
@@ -50,7 +50,13 @@ namespace WarCraft.Core.Services
 
         public bool RemoveById(int orderId)
         {
-            throw new NotImplementedException();
+            var order = GetOrderById(orderId);
+            if (order == default(PersonalOrder))
+            {
+                return false;
+            }
+            _context.Remove(order);
+            return _context.SaveChanges() != 0;
         }
 
         public bool Update(int productId, string userId, int categoryId, string name, string image, int quantity)
