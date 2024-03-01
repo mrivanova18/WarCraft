@@ -28,9 +28,14 @@ namespace WarCraft.Core.Services
             return _context.SaveChanges() != 0;
         }
 
+        public ContactUs GetContactById(int id)
+        {
+            return _context.ContactUs.Find(id);
+        }
+
         public List<ContactUs> GetMessage()
         {
-            return _context.ContactUs.ToList();
+            return _context.ContactUs.OrderByDescending(x => x.Id).ToList();
         }
     }
 }

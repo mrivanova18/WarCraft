@@ -4,6 +4,7 @@ using WarCraft.Core.Contracts;
 using WarCraft.Core.Services;
 using WarCraft.Infrastructure.Data.Entities;
 using WarCraft.Models.ContactUs;
+using WarCraft.Models.Order;
 using WarCraft.Models.Product;
 
 namespace WarCraft.Controllers
@@ -18,8 +19,8 @@ namespace WarCraft.Controllers
         // GET: ContactUsController
         public ActionResult Index()
         {
-            List<ContactUsVM> message = _contactUsService.GetMessage()
-                .Select(item => new ContactUsVM()
+            List<ContactUsIndexVM> message = _contactUsService.GetMessage()
+                .Select(item => new ContactUsIndexVM()
                 {
                     Id = item.Id,
                     FirstName = item.FirstName,
@@ -31,7 +32,7 @@ namespace WarCraft.Controllers
         }
 
         // GET: ContactUsController/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {            
             return View();
         }
@@ -39,14 +40,17 @@ namespace WarCraft.Controllers
         // POST: ContactUsController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([FromForm] ContactUsVM item)
+        public ActionResult Create([FromForm] ContactUsCreateVM item)
         {
             if (ModelState.IsValid)
             {
-                _contactUsService.Create(item.FirstName,item.LastName,item.Email,item.Message);
-                return RedirectToAction("Success");                
+                var createdId = _contactUsService.Create(item.FirstName,item.LastName,item.Email,item.Message);
+                if (createdId)
+                {
+                    return RedirectToAction("Success");
+                }
             }
-            return View(item);
+            return View();
         }
 
         public ActionResult Success()

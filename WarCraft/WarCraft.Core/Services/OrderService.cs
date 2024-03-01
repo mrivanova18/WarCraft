@@ -42,7 +42,7 @@ namespace WarCraft.Core.Services
 
         public Order GetOrderById(int orderId)
         {
-            throw new NotImplementedException();
+            return _context.Orders.Find(orderId);
         }
 
         public List<Order> GetOrders()
@@ -56,8 +56,18 @@ namespace WarCraft.Core.Services
                 .OrderByDescending(x => x.OrderDate).ToList();
         }
 
-        public bool RemoveById(int orderId)
+        public bool RemoveById(int orderId, int quantity)
         {
+            /*var order = GetOrderById(orderId);
+            if (order == default(Order))
+            {
+                return false;
+            }            
+            _context.QuantityAvailable -= quantity;
+            this._context.Products.Update(order);
+            this._context.Orders.Remove(order);
+            return _context.SaveChanges() != 0;
+            */
             throw new NotImplementedException();
         }
 

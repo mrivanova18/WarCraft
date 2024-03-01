@@ -2,7 +2,7 @@
 
 namespace WarCraft.Models.ContactUs
 {
-    public class ContactUsVM
+    public class ContactUsCreateVM
     {
         [Key]
         public int Id { get; set; }
