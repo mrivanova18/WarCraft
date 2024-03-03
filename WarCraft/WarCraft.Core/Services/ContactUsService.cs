@@ -25,6 +25,7 @@ namespace WarCraft.Core.Services
                 Email = email,
                 Message = message
             };
+            _context.ContactUs.Add(contactUs);
             return _context.SaveChanges() != 0;
         }
 
