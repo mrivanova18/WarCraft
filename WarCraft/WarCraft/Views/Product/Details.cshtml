@@ -4,61 +4,26 @@
     ViewData["Title"] = "Details";
 }
 
+<div class="text-center">
 <h1>Details</h1>
+</div>
 
 <div>
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.CategoryName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.CategoryName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ManufacturerName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ManufacturerName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-        <dd class="col-sm-10">
-            <img src="@Html.DisplayFor(model => model.Image)" alt="Image" width="100" />
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.QuantityAvailable)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.QuantityAvailable)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Discount)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Discount)
-        </dd>
-    </dl>
+    <div class="row" id="details">
+        <img id="detailPhoto" src="@Html.DisplayFor(model => model.Image)" alt="Image"/>
+        <h2>@Html.DisplayFor(model => model.Name)</h2>
+        <h3>@Html.DisplayFor(model => model.CategoryName)</h3>
+        <h5>@Html.DisplayFor(model => model.ManufacturerName)</h5>
+        <h6>Description:</h6>
+        <p>@Html.DisplayFor(model => model.Description)</p>
+        <h6>Available Quantity:</h6>
+        <p> @Html.DisplayFor(model => model.QuantityAvailable)</p>
+        <h3>Price: @Html.DisplayFor(model => model.Price) BGN</h3>
+        <h6>Discount: @Html.DisplayFor(model => model.Discount)%</h6>
+    </div>
 </div>
+    
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
