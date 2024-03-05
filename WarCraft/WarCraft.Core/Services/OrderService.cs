@@ -56,19 +56,21 @@ namespace WarCraft.Core.Services
                 .OrderByDescending(x => x.OrderDate).ToList();
         }
 
-        public bool RemoveById(int orderId, int quantity)
+        public bool RemoveById(int productId, int orderId, int quantity)
         {
-            /*var order = GetOrderById(orderId);
+            var product = this._context.Products.SingleOrDefault(x => x.Id == productId);
+            var order = GetOrderById(orderId);
+            if (product == null)
+            {
+                return false;
+            }
             if (order == default(Order))
             {
                 return false;
-            }            
-            _context.QuantityAvailable -= quantity;
-            this._context.Products.Update(order);
-            this._context.Orders.Remove(order);
+            }
+            _context.Remove(order);
+            product.QuantityAvailable += quantity;
             return _context.SaveChanges() != 0;
-            */
-            throw new NotImplementedException();
         }
 
         public bool Update(int orderId, int productId, string userId, int quantity)

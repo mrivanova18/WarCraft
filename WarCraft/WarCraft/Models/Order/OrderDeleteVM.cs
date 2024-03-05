@@ -13,7 +13,9 @@ namespace WarCraft.Models.Order
         public int ProductId { get; set; }
         [Display(Name = "Product")]
         public string Product { get; set; } = null!;
-        
+
+        [Display(Name = "Image")]
+        public string Image { get; set; } = null!;
         public string UserId { get; set; } = null!;
         [Display(Name = "User")]
         public string User { get; set; } = null!;

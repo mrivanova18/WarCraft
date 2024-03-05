@@ -156,3 +156,6 @@ option {
     color: white;
     border: 2px solid white;
 }
+#edit {
+    background-image: none;
+}

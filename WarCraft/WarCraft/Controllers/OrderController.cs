@@ -5,8 +5,10 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Security.Claims;
 using WarCraft.Core.Contracts;
+using WarCraft.Core.Services;
 using WarCraft.Infrastructure.Data.Entities;
 using WarCraft.Models.Order;
+using WarCraft.Models.PersonalOrder;
 
 namespace WarCraft.Controllers
 {
@@ -115,22 +117,47 @@ namespace WarCraft.Controllers
         // GET: OrderController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Order item = _orderService.GetOrderById(id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+            OrderDeleteVM order = new OrderDeleteVM()
+            {
+                Id = item.Id,
+                OrderDate = item.OrderDate,
+                UserId = item.UserId,
+                User = item.User.UserName,
+                ProductId = item.ProductId,
+                Product = item.Product.Name,
+                Image = item.Product.Image,
+                Quantity = item.Quantity,
+                Price = item.Price,
+                Discount = item.Discount,
+                TotalPrice = item.TotalPrice
+            };
+            return View(order);
         }
 
         // POST: OrderController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int productId, int orderId, int quantity, IFormCollection collection)
         {
-            try
+            var deleted = _orderService.RemoveById(productId, orderId, quantity);
+            if (deleted)
             {
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("SuccessDelete");
             }
-            catch
+            else
             {
                 return View();
             }
+        }
+
+        public IActionResult SuccessDelete()
+        {
+            return View();
         }
         public ActionResult MyOrders()
         {

@@ -13,7 +13,7 @@ namespace WarCraft.Core.Contracts
         List<Order> GetOrders();
         List<Order> GetOrdersByUser(string userId);
         Order GetOrderById(int orderId);
-        bool RemoveById(int orderId, int quantity);
+        bool RemoveById(int productId, int orderId, int quantity);
         bool Update(int orderId, int productId, string userId, int quantity);
     }
 }
