@@ -63,17 +63,17 @@
             
             @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
             {
-                    <a asp-action="Edit" asp-route-id="@product.Id" class="btn btn-warning">Edit</a>
+                    <a id="button" asp-action="Edit" asp-route-id="@product.Id" class="btn btn-warning">Edit</a>
             }
 
             @if (this.User.Identity.IsAuthenticated)
             {
-                    <a asp-action="Create" asp-controller="Order" asp-route-id="@product.Id" class="btn btn-warning">Order</a>
+                    <a id="button" asp-action="Create" asp-controller="Order" asp-route-id="@product.Id" class="btn btn-warning">Order</a>
             }
 
             @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
             {
-                    <a asp-action="Delete" asp-route-id="@product.Id" class="btn btn-danger">Delete</a>
+                    <a id="button" asp-action="Delete" asp-route-id="@product.Id" class="btn btn-danger">Delete</a>
             }  
             </div>
         </div>        

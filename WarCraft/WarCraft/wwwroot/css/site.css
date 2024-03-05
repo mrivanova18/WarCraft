@@ -119,17 +119,40 @@ option {
 #cardA{
     background-color:darkgreen;
 }
-.card{
-    background-color:darkgreen;
+.card {
+    background-color: darkgreen;
+    border: 4px solid #331f0c;
 }
 #details {
-    margin: 0px;
-    width: 100%;
-    border: none;
-    padding: 0px;
+    background-image:none;
+}
+#detailPhoto {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: 500px;
+}
+#button {
+    background-color: #331f0c;
+    color:white;
+    border: 2px solid white;
+}
+#order {
     background-image: none;
 }
-#detailPhoto{
-    width:auto;
-    height:500px;
+#submit {
+    background-color: #331f0c;
+    color: white;
+    border: 2px solid white;
+}
+#registerSubmit {
+    background-color: #331f0c;
+    color: white;
+    border: 2px solid white;
+}
+#login-submit {
+    background-color: #331f0c;
+    color: white;
+    border: 2px solid white;
 }

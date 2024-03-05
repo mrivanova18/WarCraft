@@ -8,10 +8,10 @@
 <h1>Details</h1>
 </div>
 
-<div>
+<div class="text-center">
     <hr />
     <div class="row" id="details">
-        <img id="detailPhoto" src="@Html.DisplayFor(model => model.Image)" alt="Image"/>
+        <img id="detailPhoto" src="@Html.DisplayFor(model => model.Image)" alt="Image" />
         <h2>@Html.DisplayFor(model => model.Name)</h2>
         <h3>@Html.DisplayFor(model => model.CategoryName)</h3>
         <h5>@Html.DisplayFor(model => model.ManufacturerName)</h5>
@@ -21,6 +21,10 @@
         <p> @Html.DisplayFor(model => model.QuantityAvailable)</p>
         <h3>Price: @Html.DisplayFor(model => model.Price) BGN</h3>
         <h6>Discount: @Html.DisplayFor(model => model.Discount)%</h6>
+        @if (this.User.Identity.IsAuthenticated)
+        {
+            <a id="button" asp-action="Create" asp-controller="Order" asp-route-id="@Model.Id" class="btn btn-warning">Order</a>
+        }
     </div>
 </div>
     
