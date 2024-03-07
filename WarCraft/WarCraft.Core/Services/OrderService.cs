@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using WarCraft.Core.Contracts;
 using WarCraft.Infrastructure.Data;
 using WarCraft.Infrastructure.Data.Entities;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace WarCraft.Core.Services
 {
@@ -56,20 +58,17 @@ namespace WarCraft.Core.Services
                 .OrderByDescending(x => x.OrderDate).ToList();
         }
 
-        public bool RemoveById(int productId, int orderId, int quantity)
+        public bool RemoveById(int orderId)
         {
-            var product = this._context.Products.SingleOrDefault(x => x.Id == productId);
-            var order = GetOrderById(orderId);
-            if (product == null)
+            var order = _context.Orders.Find(orderId);
+            var product = _context.Products.Find(order.ProductId);
+            if (product == default(Product))
             {
                 return false;
-            }
-            if (order == default(Order))
-            {
-                return false;
-            }
-            _context.Remove(order);
-            product.QuantityAvailable += quantity;
+            }            
+            product.QuantityAvailable += order.Quantity;
+            _context.Update(product);
+            _context.Orders.Remove(order);
             return _context.SaveChanges() != 0;
         }
 

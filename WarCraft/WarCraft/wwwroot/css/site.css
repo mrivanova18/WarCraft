@@ -159,3 +159,10 @@ option {
 #edit {
     background-image: none;
 }
+#profile {
+    margin: 0px;
+    width: 100%;
+    border: none;
+    padding: 0px;
+    background-image: none;
+}

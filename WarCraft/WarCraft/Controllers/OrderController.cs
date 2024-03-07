@@ -142,9 +142,9 @@ namespace WarCraft.Controllers
         // POST: OrderController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int productId, int orderId, int quantity, IFormCollection collection)
+        public ActionResult Delete(int id, IFormCollection collection)
         {
-            var deleted = _orderService.RemoveById(productId, orderId, quantity);
+            var deleted = _orderService.RemoveById(id);
             if (deleted)
             {
                 return RedirectToAction("SuccessDelete");
