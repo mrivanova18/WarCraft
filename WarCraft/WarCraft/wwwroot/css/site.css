@@ -166,3 +166,8 @@ option {
     padding: 0px;
     background-image: none;
 }
+#innerProfile {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+}
