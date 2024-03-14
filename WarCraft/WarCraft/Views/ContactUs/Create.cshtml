@@ -14,22 +14,22 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>                      
             <div class="form-group">               
-                <input asp-for="FirstName" placeholder="First name..." />
+                <input id="contactUs" asp-for="FirstName" placeholder="First name..." />
                 <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
             <br />
             <div class="form-group">
-                <input asp-for="LastName" placeholder="Last name..." />
+                <input id="contactUs" asp-for="LastName" placeholder="Last name..." />
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
             <br />
             <div class="form-group">
-                <input asp-for="Email" placeholder="Email..." />
+                <input id="contactUs" asp-for="Email" placeholder="Email..." />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>    
             <br />
             <div class="form-group">
-                <textarea rows="5" cols="70" asp-for="Message" placeholder="Write something..."></textarea>
+                <textarea id="contactUs" rows="5" cols="70" asp-for="Message" placeholder="Write something..."></textarea>
                 <span asp-validation-for="Message" class="text-danger"></span>
             </div>
             <br />

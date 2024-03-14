@@ -136,6 +136,12 @@ namespace WarCraft.Controllers
                     Id = c.Id,
                     CategoryName = c.CategoryName,
                 }).ToList();
+            updatedProduct.Manufacturers = _manufacturerService.GetManufacturers()
+                .Select(c => new ManufacturerPairVM()
+                {
+                    Id = c.Id,
+                    ManufacturerName = c.ManufacturerName,
+                }).ToList();
             return View(updatedProduct);
         }
 

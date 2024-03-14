@@ -36,7 +36,7 @@ namespace WarCraft.Models.Product
         [ForeignKey("Manufacturer")]
         [Display(Name = "Manufacturer")]
         public int ManufacturerId { get; set; }
-        public virtual List<ManufacturerPairVM> Manufacturer { get; set; } = new List<ManufacturerPairVM>();
+        public virtual List<ManufacturerPairVM> Manufacturers { get; set; } = new List<ManufacturerPairVM>();
 
         [Display(Name = "Description")]
         public string Description { get; set; } = null!;

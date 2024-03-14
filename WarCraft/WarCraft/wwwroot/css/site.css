@@ -93,8 +93,12 @@ option {
     width: 100%;
     height: 100%;
 }
-#border{
-    border: 5px solid #331f0c;
+#border {
+    border: 5px solid white;
+    background-color: red;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #cardTitles{
@@ -172,7 +176,7 @@ option {
     margin-right: auto;
     width: auto;
 }
-input, textarea {
+#contactUs {
     width: 100%;
     padding: 10px;
     border-radius: 4px;
@@ -181,4 +185,16 @@ input, textarea {
     float: left;
     width: 75%;
     margin-top: 6px;
+}
+label{
+    color:white;
+}
+#createButton{
+    background-color:red;
+    color:white;
+    border: 2px solid white;
+    padding:10px;
+}
+#profile {
+    color: black;
 }

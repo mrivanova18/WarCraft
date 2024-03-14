@@ -8,7 +8,7 @@
 </div>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-75">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <label asp-for="CategoryId" class="control-label"></label>
@@ -21,16 +21,16 @@
             <span asp-validation-for="CategoryId" class="text-danger"></span>
             <div class="form-group">
                 <label asp-for="NameOfProduct" class="control-label"></label>
-                <input asp-for="NameOfProduct" class="form-control" />
+                <input id="contactUs" asp-for="NameOfProduct" class="form-control" />
             </div>
             <div class="form-group">
                 <label asp-for="Image" class="control-label"></label>
-                <input asp-for="Image" class="form-control" />
+                <input id="contactUs" asp-for="Image" class="form-control" />
                 <span asp-validation-for="Image" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Quantity" class="control-label"></label>
-                <input asp-for="Quantity" class="form-control" onclick="calcSum()" />
+                <input id="contactUs" asp-for="Quantity" class="form-control" onclick="calcSum()" />
                 <span asp-validation-for="Quantity" class="text-danger"></span>
             </div>
             <br />
