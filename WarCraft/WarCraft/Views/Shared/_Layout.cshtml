@@ -12,7 +12,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">               
-                <h1><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="/images/logo.png" height="50" width="50" /></a></h1>
+                <h1><a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img class="card-img-top" src="/images/logo.png" height="60" width="60" /></a></h1>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -65,11 +65,11 @@
                                 </button>
 
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" href="/Client/Index">Clients</a></li>
-                                    <li><a class="dropdown-item" href="/Order/Index">Orders</a></li>
-                                    <li><a class="dropdown-item" href="/PersonalOrder/Index">Customized Orders</a></li>
-                                    <li><a class="dropdown-item" href="/Statistics/Index">Statistics</a></li>
-                                    <li><a class="dropdown-item" href="/ContactUs/Index">Messages</a></li>
+                                    <li><a class="dropdown-item" id="dropdown-item" href="/Client/Index">Clients</a></li>
+                                    <li><a class="dropdown-item" id="dropdown-item" href="/Order/Index">Orders</a></li>
+                                    <li><a class="dropdown-item" id="dropdown-item" href="/PersonalOrder/Index">Customized Orders</a></li>
+                                    <li><a class="dropdown-item" id="dropdown-item" href="/Statistics/Index">Statistics</a></li>
+                                    <li><a class="dropdown-item" id="dropdown-item" href="/ContactUs/Index">Messages</a></li>
                                 </ul>
                             </li>
                         }

@@ -4,8 +4,6 @@
     ViewData["Title"] = "Products";
 }
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel" style="width:auto">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -36,12 +34,14 @@
 <div class="text-center">
     <h1>Products</h1>
     <hr />
+    <br />
     @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
     {
         <p>
             <a id="createButton" asp-action="Create">Create New</a>
         </p>
     }
+    <br />
     <form asp-controller="Product" asp-action="Index" method="get">
         <p>
             Category: <input id="filter" type="text" name="SearchStringCategoryName" />

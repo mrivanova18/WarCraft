@@ -4,11 +4,7 @@
     ViewData["Title"] = "Details";
 }
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<div class="text-center">
-<h1>Details</h1>
-</div>
+<h1 class ="text-center">Details</h1>
 
 <div class="text-center">
     <hr />
@@ -31,8 +27,8 @@
 </div>
     
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a id="button" asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a id="button" asp-action="Index">Back to List</a>
 </div>
 @section Scripts {
     @{

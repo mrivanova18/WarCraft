@@ -4,9 +4,7 @@
     ViewData["Title"] = "My Orders";
 }
 
-<div class="text-center">
-    <h1>My Orders</h1>
-</div>
+<h1 class ="text-center">My Orders</h1>
 
 @if (this.User.Identity.IsAuthenticated)
 {
@@ -15,6 +13,7 @@
     </p>
 }
 
+<div style="overflow-x:auto;">
 <table class="table">
     <thead>
         <tr>
@@ -82,4 +81,5 @@
             </tr>
         }
     </tbody>
-</table>
+    </table>
+</div>
