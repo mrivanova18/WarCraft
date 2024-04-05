@@ -95,13 +95,14 @@ namespace WarCraft.Infrastructure.Data.Infrastructure
             }
             dataManufacturer.Manufacturers.AddRange(new[]
             {
-                new Manufacturer{ManufacturerName = "Lockheed Martin – America",  },
-                new Manufacturer{ManufacturerName = "McDonnell Douglas – America",  },
-                new Manufacturer{ManufacturerName = "Boeing – America",},
-                new Manufacturer{ManufacturerName = "Northrop Grumman – America", },
-                new Manufacturer{ManufacturerName = "Albatros – Germany", },
-                new Manufacturer{ManufacturerName = "Messerschmitt – Germany", },
-                new Manufacturer{ManufacturerName = "Supermarine – United Kingdom",  },
+                new Manufacturer{ManufacturerName = "Lockheed Martin – America"},
+                new Manufacturer{ManufacturerName = "McDonnell Douglas – America"},
+                new Manufacturer{ManufacturerName = "Boeing – America"},
+                new Manufacturer{ManufacturerName = "Northrop Grumman – America" },
+                new Manufacturer{ManufacturerName = "Albatros – Germany" },
+                new Manufacturer{ManufacturerName = "Messerschmitt – Germany" },
+                new Manufacturer{ManufacturerName = "Supermarine – United Kingdom"},
+                new Manufacturer{ManufacturerName = "Nuffield Mechanizations and Aero"},
             });
             dataManufacturer.SaveChanges();
         }

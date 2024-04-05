@@ -10,7 +10,6 @@ namespace WarCraft.Infrastructure.Data.Entities
     {
         public int Id { get; set; }
         public string CategoryName { get; set; } = null!;
-        //public string Type { get; set; } = null!;
         public virtual IEnumerable<Product> Products { get; set; } = new List<Product>();
         public virtual IEnumerable<PersonalOrder> PersonalOrders { get; set; } = new List<PersonalOrder>();
     }
