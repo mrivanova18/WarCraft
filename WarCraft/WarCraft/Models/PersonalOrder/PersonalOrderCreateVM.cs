@@ -29,6 +29,7 @@ namespace WarCraft.Models.PersonalOrder
         public string Image { get; set; } = null!;
 
         [Required]
+        [Range(1, 50)]
         public int Quantity { get; set; }
     }
 }
